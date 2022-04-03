@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    tools:context=".FragmentHome">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior=".HomeAppbarBehavior">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#DD2222"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:title="레진코믹스"
+                app:titleTextColor="#DDDDDD" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/appbar_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager_home_banner"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+                android:id="@+id/dots_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                app:dotsColor="#666666"
+                app:dotsCornerRadius="8dp"
+                app:dotsSize="16dp"
+                app:dotsSpacing="4dp"
+                app:dotsStrokeColor="#000000"
+                app:dotsStrokeWidth="2dp"
+                app:layout_constraintBottom_toBottomOf="@id/viewpager_home_banner"
+                app:layout_constraintEnd_toEndOf="@id/viewpager_home_banner"
+                app:layout_constraintStart_toStartOf="@id/viewpager_home_banner" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_homegenre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/background_texttile"
+                android:gravity="center_horizontal"
+                android:paddingVertical="20dp"
+                android:text="홈에서 보고 싶은 장르 취향 설정하기 >"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewpager_home_banner" />
+
+            <LinearLayout
+                android:id="@+id/linear_genre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/background_texttile"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_homegenre">
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_genre1" />
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_genre2" />
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_genre3" />
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_genre4" />
+
+            </LinearLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_homeranking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/linear_genre" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_home_ranking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/tab_homeranking" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_tlswkrduswo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingStart="10dp"
+                android:text="신작 연재"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/recyclerview_home_ranking" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_tlswkr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_tlswkrduswo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_newcomic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingStart="10dp"
+                android:text="신규 만화"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/recyclerview_tlswkr" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_newcomic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_newcomic" />
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/img_newartist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@id/recyclerview_newcomic"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingStart="10dp"
+                android:text="💖현재 EVENT중인 작품💖"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/img_newartist" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_event" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_hot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingStart="10dp"
+                android:text="🔥HOT🔥 꾸금 엿보기 👀"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/recyclerview_event" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_hot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_hot" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_ad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/recyclerview_hot"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_shop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@id/recyclerview_ad"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="제이미샵"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:paddingStart="10dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_shop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_shop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_ero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingStart="10dp"
+                android:text="노출없이 야릇해"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/recyclerview_shop" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_ero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_ero" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_FAQ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@id/recyclerview_ero"
+                android:paddingVertical="15dp"
+                android:gravity="center"
+                android:text="고객지원 / 공지사항"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:background="@drawable/background_faq"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_FAQ"
+                android:gravity="center_horizontal"
+                android:text="(주)레진엔터테인먼트 사업자정보"
+                android:textColor="#111111"
+                android:textSize="14sp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_copi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_info"
+                android:gravity="center_horizontal"
+                android:text="ⓒLEZHIN ENTERTAINMENT all right reserved."
+                android:textSize="12sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_copi"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

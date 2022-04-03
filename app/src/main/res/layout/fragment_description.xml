@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentDescription">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/img_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/homebanner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/gradation"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/background_description"
+        app:layout_constraintBottom_toBottomOf="@id/img_description" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_description_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="레바툰"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/gradation" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_description_genre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="장르 | 15세 이용가"
+        android:textColor="#DDDDDD"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_description_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_description_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="작가 : 레바"
+        android:textColor="#DDDDDD"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_description_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description_genre" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gradation" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_description_wish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_button_description"
+        android:text="☆ 찜하기"
+        android:textColor="#DDDDDD"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_description_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description_artist" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_description_good"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/btn_description_wish"
+        app:layout_constraintStart_toEndOf="@+id/btn_description_wish"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/background_button_description"
+        android:text="☆ 찜하기"
+        android:textStyle="bold"
+        android:textColor="#DDDDDD"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_description_bad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/btn_description_wish"
+        app:layout_constraintStart_toEndOf="@+id/btn_description_good"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/background_button_description"
+        android:text="☆ 찜하기"
+        android:textStyle="bold"
+        android:textColor="#DDDDDD"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

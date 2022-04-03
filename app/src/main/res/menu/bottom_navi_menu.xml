@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/bottom1"
+        android:icon="@drawable/icon_home"
+        android:title="홈"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/bottom2"
+        android:icon="@drawable/icon_comic"
+        android:title="연재"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/bottom3"
+        android:icon="@drawable/icon_time"
+        android:title="무료"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/bottom4"
+        android:icon="@drawable/icon_present"
+        android:title="선물함"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/bottom5"
+        android:icon="@drawable/icon_book"
+        android:title="내 서재"
+        app:showAsAction="always"/>
+
+</menu>
