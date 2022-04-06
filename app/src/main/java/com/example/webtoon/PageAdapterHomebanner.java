@@ -1,6 +1,8 @@
 package com.example.webtoon;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,8 +54,27 @@ Context context;
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        int p = position;
+        DataWebtoon item = list.get(p).getWebtoon();
         String src = list.get(position).getSrc();
         holder.bindSliderImage(src);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("Item Clicked", (p+1)+"번째 아이템 선택");
+                Intent intent = new Intent(context, ActivityDescription.class);
+                intent.putExtra("title", item.getTitle());
+                intent.putExtra("src", item.getSrc());
+                intent.putExtra("artist", item.getArtist());
+                intent.putExtra("genre", item.getGenre());
+                intent.putExtra("age", item.getAge());
+                intent.putExtra("tag", item.getTag());
+
+                Log.e("PutExtra", item.getTitle());
+
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -6,11 +6,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.utils.widget.ImageFilterView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -18,19 +18,20 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.List;
 
-public class RecyclerAdapterToonList extends RecyclerView.Adapter<RecyclerAdapterToonList.ViewHolder>{
+public class RecyclerAdapterDuswo extends RecyclerView.Adapter<RecyclerAdapterDuswo.ViewHolder>{
     List<DataWebtoon> list;
     static Context context;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageFilterView image;
-        AppCompatTextView title;
+        AppCompatTextView title, artist, genre;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            image = itemView.findViewById(R.id.img_toonlist);
-            title = itemView.findViewById(R.id.tv_toonListTitle);
-
+            image = itemView.findViewById(R.id.img_duswo);
+            title = itemView.findViewById(R.id.tv_duswo_title);
+            artist = itemView.findViewById(R.id.tv_duswo_artist);
+            genre = itemView.findViewById(R.id.tv_duswo_genre);
         }
 
         public void bindSliderImage(String src) {
@@ -42,38 +43,41 @@ public class RecyclerAdapterToonList extends RecyclerView.Adapter<RecyclerAdapte
         }
     }
 
-    public RecyclerAdapterToonList(List<DataWebtoon> list, Context context){
+    public RecyclerAdapterDuswo(List<DataWebtoon> list, Context context){
         this.list = list;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public RecyclerAdapterToonList.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        LinearLayout view = (LinearLayout) LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.row_toonlist, viewGroup, false);
+    public RecyclerAdapterDuswo.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+        ConstraintLayout view = (ConstraintLayout) LayoutInflater.from(viewGroup.getContext())
+                .inflate(R.layout.row_duswo, viewGroup, false);
 
-        return new RecyclerAdapterToonList.ViewHolder(view);
+        return new RecyclerAdapterDuswo.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerAdapterToonList.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerAdapterDuswo.ViewHolder holder, int position) {
         int p = position;
-        String src = list.get(p).getSrc();
+        DataWebtoon item = list.get(p);
+        String src = item.getSrc();
         holder.bindSliderImage(src);
-        holder.title.setText(list.get(p).getTitle());
+        holder.title.setText(item.getTitle());
+        holder.artist.setText(item.getArtist());
+        holder.genre.setText(item.getGenre());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.e("Item Clicked", (p+1)+"번째 아이템 선택");
                 Intent intent = new Intent(context, ActivityDescription.class);
-                intent.putExtra("title", list.get(p).getTitle());
-                intent.putExtra("src", list.get(p).getSrc());
-                intent.putExtra("artist", list.get(p).getArtist());
-                intent.putExtra("genre", list.get(p).getGenre());
-                intent.putExtra("age", list.get(p).getAge());
-                intent.putExtra("tag", list.get(p).getTag());
+                intent.putExtra("title", item.getTitle());
+                intent.putExtra("src", item.getSrc());
+                intent.putExtra("artist", item.getArtist());
+                intent.putExtra("genre", item.getGenre());
+                intent.putExtra("age", item.getAge());
+                intent.putExtra("tag", item.getTag());
 
                 Log.e("PutExtra", list.get(p).getTitle());
 

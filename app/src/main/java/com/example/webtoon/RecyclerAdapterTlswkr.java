@@ -1,6 +1,8 @@
 package com.example.webtoon;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +19,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import java.util.List;
 
 public class RecyclerAdapterTlswkr extends RecyclerView.Adapter<RecyclerAdapterTlswkr.ViewHolder> {
-    List<DataToonList> list;
+    List<DataWebtoon> list;
     static Context context;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -39,7 +41,7 @@ public class RecyclerAdapterTlswkr extends RecyclerView.Adapter<RecyclerAdapterT
         }
     }
 
-    public RecyclerAdapterTlswkr(List<DataToonList> list, Context context) {
+    public RecyclerAdapterTlswkr(List<DataWebtoon> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -55,9 +57,28 @@ public class RecyclerAdapterTlswkr extends RecyclerView.Adapter<RecyclerAdapterT
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapterTlswkr.ViewHolder holder, int position) {
-        String src = list.get(position).getSrc();
+        int p = position;
+        String src = list.get(p).getSrc();
         holder.bindSliderImage(src);
-        holder.title.setText(list.get(position).getTitle());
+        holder.title.setText(list.get(p).getTitle());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("Item Clicked", (p+1)+"번째 아이템 선택");
+                Intent intent = new Intent(context, ActivityDescription.class);
+                intent.putExtra("title", list.get(p).getTitle());
+                intent.putExtra("src", list.get(p).getSrc());
+                intent.putExtra("artist", list.get(p).getArtist());
+                intent.putExtra("genre", list.get(p).getGenre());
+                intent.putExtra("age", list.get(p).getAge());
+                intent.putExtra("tag", list.get(p).getTag());
+
+                Log.e("PutExtra", list.get(p).getTitle());
+
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

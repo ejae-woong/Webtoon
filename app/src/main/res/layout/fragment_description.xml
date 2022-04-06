@@ -77,26 +77,68 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_description_good"
-        android:layout_width="wrap_content"
+        android:layout_width="48dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@+id/btn_description_wish"
         app:layout_constraintStart_toEndOf="@+id/btn_description_wish"
         android:layout_marginStart="15dp"
         android:background="@drawable/background_button_description"
-        android:text="☆ 찜하기"
+        android:text="👍🏻"
         android:textStyle="bold"
         android:textColor="#DDDDDD"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_description_bad"
-        android:layout_width="wrap_content"
+        android:layout_width="48dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@+id/btn_description_wish"
         app:layout_constraintStart_toEndOf="@+id/btn_description_good"
         android:layout_marginStart="15dp"
         android:background="@drawable/background_button_description"
-        android:text="☆ 찜하기"
+        android:text="👎🏻"
         android:textStyle="bold"
         android:textColor="#DDDDDD"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_description_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_description_bad"
+        app:layout_constraintStart_toStartOf="@id/tv_description_title"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:text="작품정보 >"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_description_buyall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_description_info"
+        app:layout_constraintStart_toStartOf="@id/btn_description_wish"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="50dp"
+        android:background="@drawable/background_button_buyall"
+        android:text="전체구매"
+        android:textColor="#DDDDDD"
+        android:textStyle="bold"/>
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_description_viewfirst"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_description_info"
+        app:layout_constraintStart_toEndOf="@id/btn_description_buyall"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/background_button_viewfirst"
+        android:text="전체구매"
+        android:textColor="#DDDDDD"
+        android:textStyle="bold"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

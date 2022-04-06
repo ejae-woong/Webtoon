@@ -2,13 +2,13 @@ package com.example.webtoon;
 
 public class DataHomebanner {
     private String src;
-    private String link;
+    private DataWebtoon webtoon;
 
     public DataHomebanner(){}
 
-    public DataHomebanner(String src, String link) {
+    public DataHomebanner(String src, DataWebtoon webtoon) {
         this.src = src;
-        this.link = link;
+        this.webtoon = webtoon;
     }
 
     public String getSrc() {
@@ -19,11 +19,11 @@ public class DataHomebanner {
         this.src = src;
     }
 
-    public String getLink() {
-        return link;
+    public DataWebtoon getWebtoon() {
+        return webtoon;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setWebtoon(DataWebtoon webtoon) {
+        this.webtoon = webtoon;
     }
 }

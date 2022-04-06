@@ -1,22 +1,14 @@
 package com.example.webtoon;
 
 public class DataHomeAD {
-    private String title;
     private String src;
+    private String link;
 
     public DataHomeAD(){}
 
-    public DataHomeAD(String title, String src) {
-        this.title = title;
+    public DataHomeAD(String src, String link) {
         this.src = src;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+        this.link = link;
     }
 
     public String getSrc() {
@@ -25,5 +17,13 @@ public class DataHomeAD {
 
     public void setSrc(String src) {
         this.src = src;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 }

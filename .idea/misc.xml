@@ -4,14 +4,23 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.15833333333333333" />
+        <entry key="app/src/main/res/drawable/background_button_buyall.xml" value="0.138" />
         <entry key="app/src/main/res/drawable/background_button_description.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/background_button_viewfirst.xml" value="0.138" />
         <entry key="app/src/main/res/drawable/background_description.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/background_faq.xml" value="0.104" />
+        <entry key="app/src/main/res/drawable/background_radio_duswo.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/background_radio_duswotext.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/background_texttile.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/icon_back.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/icon_good.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/icon_share.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/menu_selector_color.xml" value="0.1905" />
+        <entry key="app/src/main/res/layout/activity_description.xml" value="0.18840579710144928" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.125" />
         <entry key="app/src/main/res/layout/fragment_comic.xml" value="0.14336372847011145" />
+        <entry key="app/src/main/res/layout/fragment_comic_duswo.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_comic_ranking.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_description.xml" value="0.1852355072463768" />
         <entry key="app/src/main/res/layout/fragment_free.xml" value="0.14336372847011145" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
@@ -19,6 +28,7 @@
         <entry key="app/src/main/res/layout/fragment_present.xml" value="0.14336372847011145" />
         <entry key="app/src/main/res/layout/fragment_ranking.xml" value="0.1" />
         <entry key="app/src/main/res/layout/row_ad.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/row_duswo.xml" value="0.1" />
         <entry key="app/src/main/res/layout/row_homebanner.xml" value="0.15670289855072464" />
         <entry key="app/src/main/res/layout/row_ranking.xml" value="0.165" />
         <entry key="app/src/main/res/layout/row_shop.xml" value="0.14336372847011145" />
