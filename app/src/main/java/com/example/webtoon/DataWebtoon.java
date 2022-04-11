@@ -11,10 +11,11 @@ public class DataWebtoon implements Comparable<DataWebtoon>{
     private int view;
     private boolean event;
     private String[] tag;
+    private String duswo;
 
     public DataWebtoon() {}
 
-    public DataWebtoon(String src, String title, String artist, String genre, String group, int age, int freedate, int view, boolean event, String[] tag) {
+    public DataWebtoon(String src, String title, String artist, String genre, String group, int age, int freedate, int view, boolean event, String[] tag, String duswo) {
         this.src = src;
         this.title = title;
         this.artist = artist;
@@ -25,6 +26,7 @@ public class DataWebtoon implements Comparable<DataWebtoon>{
         this.view = view;
         this.event = event;
         this.tag = tag;
+        this.duswo = duswo;
     }
 
     public String getSrc() {
@@ -105,6 +107,14 @@ public class DataWebtoon implements Comparable<DataWebtoon>{
 
     public void setTag(String[] tag) {
         this.tag = tag;
+    }
+
+    public String getDuswo() {
+        return duswo;
+    }
+
+    public void setDuswo(String duswo) {
+        this.duswo = duswo;
     }
 
     @Override

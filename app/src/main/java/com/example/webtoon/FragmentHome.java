@@ -236,17 +236,17 @@ public class FragmentHome extends Fragment {
 
     private void addHomeBanner() {
         homebannerList.add(new DataHomebanner("https://ccdn.lezhin.com/v2/inventory_items/6220843452792832/media/upperBannerMobile.webp?updated=1646902046000&width=688",
-                new DataWebtoon("https://ccdn.lezhin.com/v2/comics/4907714540535808/images/tall.webp?updated=1646101410301&width=277", "안나 이야기", "김지효", "로맨스", "신작", 0, 41, 10090, false, new String[] {"드라마", "모험", "로맨스"})));
+                new DataWebtoon("https://ccdn.lezhin.com/v2/comics/4907714540535808/images/tall.webp?updated=1646101410301&width=277", "안나 이야기", "김지효", "로맨스", "신작", 0, 41, 10090, false, new String[] {"드라마", "모험", "로맨스"}, "월")));
         homebannerList.add(new DataHomebanner("https://ccdn.lezhin.com/v2/inventory_items/5086375147012096/media/upperBannerMobile.webp?updated=1646996970000&width=688",
-                new DataWebtoon("https://ccdn.lezhin.com/v2/comics/4907714540535808/images/tall.webp?updated=1646101410301&width=277", "안나 이야기", "김지효", "로맨스", "신작", 0, 41, 10090, false, new String[] {"드라마", "모험", "로맨스"})));
+                new DataWebtoon("https://ccdn.lezhin.com/v2/comics/4907714540535808/images/tall.webp?updated=1646101410301&width=277", "안나 이야기", "김지효", "로맨스", "신작", 0, 41, 10090, false, new String[] {"드라마", "모험", "로맨스"}, "월")));
         homebannerList.add(new DataHomebanner("https://ccdn.lezhin.com/v2/inventory_items/6220843452792832/media/upperBannerMobile.webp?updated=1646902046000&width=688",
-                new DataWebtoon("https://ccdn.lezhin.com/v2/comics/4907714540535808/images/tall.webp?updated=1646101410301&width=277", "안나 이야기", "김지효", "로맨스", "신작", 0, 41, 10090, false, new String[] {"드라마", "모험", "로맨스"})));
+                new DataWebtoon("https://ccdn.lezhin.com/v2/comics/4907714540535808/images/tall.webp?updated=1646101410301&width=277", "안나 이야기", "김지효", "로맨스", "신작", 0, 41, 10090, false, new String[] {"드라마", "모험", "로맨스"}, "월")));
         homebannerList.add(new DataHomebanner("https://ccdn.lezhin.com/v2/inventory_items/6220843452792832/media/upperBannerMobile.webp?updated=1646902046000&width=688",
-                new DataWebtoon("https://ccdn.lezhin.com/v2/comics/4907714540535808/images/tall.webp?updated=1646101410301&width=277", "안나 이야기", "김지효", "로맨스", "신작", 0, 41, 10090, false, new String[] {"드라마", "모험", "로맨스"})));
+                new DataWebtoon("https://ccdn.lezhin.com/v2/comics/4907714540535808/images/tall.webp?updated=1646101410301&width=277", "안나 이야기", "김지효", "로맨스", "신작", 0, 41, 10090, false, new String[] {"드라마", "모험", "로맨스"}, "월")));
         homebannerList.add(new DataHomebanner("https://ccdn.lezhin.com/v2/inventory_items/6220843452792832/media/upperBannerMobile.webp?updated=1646902046000&width=688",
-                new DataWebtoon("https://ccdn.lezhin.com/v2/comics/4907714540535808/images/tall.webp?updated=1646101410301&width=277", "안나 이야기", "김지효", "로맨스", "신작", 0, 41, 10090, false, new String[] {"드라마", "모험", "로맨스"})));
+                new DataWebtoon("https://ccdn.lezhin.com/v2/comics/4907714540535808/images/tall.webp?updated=1646101410301&width=277", "안나 이야기", "김지효", "로맨스", "신작", 0, 41, 10090, false, new String[] {"드라마", "모험", "로맨스"}, "월")));
         homebannerList.add(new DataHomebanner("https://ccdn.lezhin.com/v2/inventory_items/6220843452792832/media/upperBannerMobile.webp?updated=1646902046000&width=688",
-                new DataWebtoon("https://ccdn.lezhin.com/v2/comics/4907714540535808/images/tall.webp?updated=1646101410301&width=277", "안나 이야기", "김지효", "로맨스", "신작", 0, 41, 10090, false, new String[] {"드라마", "모험", "로맨스"})));
+                new DataWebtoon("https://ccdn.lezhin.com/v2/comics/4907714540535808/images/tall.webp?updated=1646101410301&width=277", "안나 이야기", "김지효", "로맨스", "신작", 0, 41, 10090, false, new String[] {"드라마", "모험", "로맨스"}, "월")));
 
     }
 

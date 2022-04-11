@@ -9,9 +9,17 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class FragmentComicRanking extends Fragment {
-Context context;
+    Context context;
+    private RecyclerView recyclerView_live, recyclerView_new;
+    GridLayoutManager gridLayoutManager;
+    ArrayList<DataWebtoon> webtoons = MainActivity.webtoons;
+
 
     public FragmentComicRanking() {
         // Required empty public constructor
@@ -34,6 +42,18 @@ Context context;
         super.onViewCreated(view, savedInstanceState);
         context = view.getContext();
 
+        recyclerView_live = view.findViewById(R.id.recyclerview_live);
+        setGridRecyclerView(recyclerView_live, webtoons, GridLayoutManager.HORIZONTAL);
+
+        recyclerView_new = view.findViewById(R.id.recyclerview_newranking);
+        setGridRecyclerView(recyclerView_new, webtoons, GridLayoutManager.HORIZONTAL);
+    }
+
+    private void setGridRecyclerView(RecyclerView recyclerView, ArrayList<DataWebtoon> list, int orientation) {
+        recyclerView.setAdapter(new RecyclerAdapterRanking(list, context));
+        recyclerView.setHasFixedSize(false);
+        gridLayoutManager = new GridLayoutManager(context, 3, orientation, false);
+        recyclerView.setLayoutManager(gridLayoutManager);
 
     }
 }
